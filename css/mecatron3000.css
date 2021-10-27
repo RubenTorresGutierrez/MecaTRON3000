@@ -1,0 +1,57 @@
+/* Rubén Torres */
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: rgb(41, 48, 54);
+}
+
+body > h1, body > p{
+    text-align: center;
+    color: white;
+}
+
+/***** DIV PRINCIPAL *****/
+#divPrincipal{
+    position: relative;
+    width: 90%;
+    height: 35em;
+    margin: 0 auto;
+    border-radius: 20px;
+    background-color: rgb(235, 235, 235);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
+}
+
+/*** PALABRAS ***/
+.palabra{
+    position: absolute;
+    padding: 5px;
+    border: 1px solid red;
+    border-radius: 4px;
+}
+
+/* CORRECTO */
+.palabra > span{
+    color: rgb(9, 255, 0);
+}
+
+/* POSICIONAMIENTO PARTICULAR */
+.palabra:nth-child(1){
+    left: 200px;
+    top: 300px;
+}
+
+.palabra:nth-child(2){
+    left: 90px;
+    top: 20px;
+}
+
+.palabra:nth-child(3){
+    left: 400px;
+    top: 40px;
+}
+
+/* CORRECTO */
+.palabra > span{
+    color: rgb(9, 255, 0);
+}
