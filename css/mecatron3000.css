@@ -15,7 +15,7 @@ body > h1, body > p{
 #divPrincipal{
     position: relative;
     width: 90%;
-    height: 300px;
+    height: 35em;
     margin: 0 auto;
     border-radius: 20px;
     background-color: rgb(235, 235, 235);
