@@ -41,7 +41,7 @@ export class Vista{
         //Moverlas
         for(let palabra of palabras){
             let top = parseInt(palabra.style.top);
-            console.log(parseInt(this.divPrincipal.style.height));
+            console.log(this.divPrincipal.style.height);
             if(top < parseInt(this.divPrincipal.style.height)){
                 top += 5;
                 palabra.style.top = `${top}px`;
@@ -52,7 +52,6 @@ export class Vista{
 
     explotar(palabra){
 
-        console.log('holi');
         palabra.remove();
 
     }
