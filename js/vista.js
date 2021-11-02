@@ -22,7 +22,9 @@ export class Vista{
     dibujar(palabra){
 
         let div = document.createElement('div');
+        let span = document.createElement('span')
         this.divPrincipal.appendChild(div);
+        div.appendChild(span);
         div.appendChild(document.createTextNode(palabra));
         div.classList.add('palabra');
         div.style.top = '0px';
@@ -41,18 +43,37 @@ export class Vista{
         //Moverlas
         for(let palabra of palabras){
             let top = parseInt(palabra.style.top);
-            console.log(this.divPrincipal.clientHeight);
-            if(top < parseInt(this.divPrincipal.clientHeight)){ //menos altura palabra
+            if(top < parseInt(this.divPrincipal.clientHeight - 31)){
                 top += 5;
                 palabra.style.top = `${top}px`;
-            }else this.explotar(palabra);
+            }else this.borrarPalabra(palabra, false);
         }
 
     }
 
-    explotar(palabra){
+    borrarPalabra(palabra, acertado){
 
+        //POSICION
+        let top = palabra.style.top;
+        let left = palabra.style.left;
+
+        //BORRAR PALABRA
         palabra.remove();
+
+        //IMAGEN
+        let img = document.createElement('img');
+        if(acertado)
+            img.src = 'img/monedas.gif';
+        else
+            img.src = 'img/explosion.gif';
+        img.style.position = 'absolute';
+        img.style.width = '70px';
+        img.style.top = top;
+        img.style.left = left;
+        this.divPrincipal.appendChild(img);
+
+        //BORRAR EXPLOSIÓN
+        setTimeout(function(){ img.remove(); }, 1000);
 
     }
 

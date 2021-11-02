@@ -35,6 +35,7 @@ class Juego{
         this.vista.divPrincipal = this.divPrincipal;
         this.generadorPalabras = window.setInterval(this.generarPalabra.bind(this), 5000);
         this.animador = window.setInterval(this.vista.moverPalabras.bind(this.vista), 100);
+        window.onkeypress = this.pulsar.bind(app);
 
     }
 
@@ -48,6 +49,36 @@ class Juego{
 
         let nuevapalabra = this.modelo.crearPalabra();
         this.vista.dibujar(nuevapalabra);
+
+    }
+
+    pulsar(evento){
+
+        let letraPulsada = evento.key;
+        //Encontrar todas las palabras
+        let palabras = this.divPrincipal.querySelectorAll('.palabra');
+
+        for(let palabra of palabras){
+            let span = palabra.children.item(0);
+            let nodotexto = palabra.childNodes[1];
+            let textoRestante = nodotexto.nodeValue;
+            let primeraLetraTextoRestante = textoRestante.charAt(0);
+            if(letraPulsada == primeraLetraTextoRestante){
+                span.textContent += letraPulsada;
+                nodotexto.nodeValue = textoRestante.substring(1);
+                //Si ya están todas las letras en el span
+                if(nodotexto.length == 0){
+                    //Se elimina la palabra
+                    this.vista.borrarPalabra(palabra, true);
+                    //Se suma un punto
+                    this.modelo.sumarPunto();
+                }
+            }else{
+                nodotexto.nodeValue = span.textContent + nodotexto.nodeValue;
+                span.textContent = '';
+            }
+        }
+
 
     }
 

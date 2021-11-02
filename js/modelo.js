@@ -11,7 +11,7 @@
 
     constructor(){
 
-        this.palabras = [];
+        this.palabras = ['hola', 'Mancha', 'lugar', 'Sancho'];
 
     }
 
@@ -21,7 +21,7 @@
      */
     crearPalabra(){
 
-        return this.crearPalabra[Math.floor(Math.random() * this.palabras.length)];
+        return this.palabras[Math.floor(Math.random() * this.palabras.length)];
 
     }
 
