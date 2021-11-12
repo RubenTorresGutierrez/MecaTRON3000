@@ -7,5 +7,5 @@
 
 ## Compilación
 
-Para generar la documentación de JavaScript
+### Para generar la documentación de JavaScript
     - jsdoc js -d docs
