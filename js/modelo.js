@@ -1,5 +1,5 @@
-/** modelo.js
- *  Modelo del Juego MecaTRON 3000
+/** 
+ *  @file Modelo del Juego MecaTRON 3000
  *  @author Rubén Torres <rtorresgutierrez.guadalupe@alumnado.fundacionloyola.net>
  *  @license GPL v3 2021
  **/
@@ -16,7 +16,8 @@
     }
 
     /**
-     * Devuelve una nueva palabra
+     * Devuelve una nueva palabra.
+     * Devuelve aleatoriamente un elemento del array de palabras.
      * @return {String} Palabra generada 
      */
     crearPalabra(){

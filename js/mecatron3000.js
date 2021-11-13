@@ -1,5 +1,5 @@
-/** mecatron3000.js
- *  Controlador principal del Juego MecaTRON 3000
+/** 
+ *  @file Controlador principal del Juego MecaTRON 3000
  *  @author Rubén Torres <rtorresgutierrez.guadalupe@alumnado.fundacionloyola.net>
  *  @license GPL v3 2021
  **/
@@ -16,7 +16,9 @@ import {Modelo} from './modelo.js';
 class Juego{
 
     constructor(){
-
+        /**
+          Constructor de la clase Juego
+        **/
         this.vista = new Vista();
         this.modelo = new Modelo();
         this.generadorPalabras = null;
@@ -53,11 +55,11 @@ class Juego{
     }
 
     /**
-     * Evento de atención a la pulsación del teclado.
-     * Busca las palabras que tienen la letra pulsada y cambia su estado.
-     * Cambiando el estilo y movimiento de la palabra
-     * @param 
-     */
+      Evento de atención a la pulsación del teclado.
+      Busca las palabras que tienen la letra pulsada y cambia su estado.
+      Cambiando el estilo y moviendo las letras de un sitio a otro.
+      @param {KeyboardEvent} evento Evento de pulsación del teclado.
+    **/
     pulsar(evento){
 
         let letraPulsada = evento.key;
@@ -80,6 +82,7 @@ class Juego{
                     this.modelo.sumarPunto();
                 }
             }else{
+                //Ha fallado, se repone el texto de la palabra
                 nodotexto.nodeValue = span.textContent + nodotexto.nodeValue;
                 span.textContent = '';
             }

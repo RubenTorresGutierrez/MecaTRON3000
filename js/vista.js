@@ -1,5 +1,5 @@
-/** vista.js
- *  Vista del Juego MecaTRON 3000
+/** 
+ *  @file Vista del Juego MecaTRON 3000
  *  @author Rubén Torres <rtorresgutierrez.guadalupe@alumnado.fundacionloyola.net>
  *  @license GPL v3 2021
  **/
@@ -51,6 +51,12 @@ export class Vista{
 
     }
 
+    /**
+     * Elimina las palabras que se le pasen como parámetro, posteriormente, 
+     * muestra una animación y finalmente modifica la puntuación del juego.
+     * @param {Element} palabra La palabra que va a ser eliminada
+     * @param {Boolean} acertado Indica si se va a borrar la palabra porque se ha acertado, o porque se ha fallado
+     */
     borrarPalabra(palabra, acertado){
 
         //POSICION
